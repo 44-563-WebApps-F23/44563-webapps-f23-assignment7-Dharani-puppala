@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>mergerer</title>
+	 <style>
+    .flex-container {
+      display: flex;  flex-direction:row;
+      background-color: rgb(40, 197, 124);
+  }
+
+.flex-container > div {  /div children of the flex container/
+  background-color: #f1f1f1; 
+  margin: 10px;  padding: 20px;  font-size: 30px;
+}
+
+/* Responsive layout */
+@media (max-width: 600px) { 
+	 .flex-container{
+		 flex-direction:column;
+		 background-color: rgb(52, 39, 171);
+	  }
+	}
+</style>
+</head>
+
+<body>
+	<h1 style="color:rgb(153, 153, 24); font-family: cursive;" > Dharani builds a merger</h1>
+	<label class="label" for="inputElement" style="color:cadetblue">Input:</label>
+	<input type="text" class="form-control" name="inputElement" id="inputElement" value="">
+	<br>
+	<br>
+	<div class="flex-container" id="target">
+		<div class="merger">row item 1</div>
+		<div class="merger">row item 2</div>
+		<div class="merger">row item 3</div>
+	</div>
+	<br>
+	<button type="button" class="button" onclick="addEnd()" style="background-color:burlywood;"><b>Add to end</b></button>
+	<button type="button" class="button" onclick="addFront()" style="background-color:lightgray;"><b>Add to front</b></button>
+	<button type="button" class="button" onclick="remove()" style="background-color:blueviolet;"><b>Remove it</b></button>
+	<button type="button" class="button" onclick="swap()" style="background-color:aqua;"><b>Swap it</b></button>
+</body>
+<script>
+	function addEnd() {
+		let component = document.createElement("div");
+		let value = document.getElementById("inputElement").value;
+		component.style.color = "black";
+		component.innerHTML = value;
+		component.className = "merger";
+		let container = document.getElementById('target');
+		container.appendChild(component);
+	}
+	function remove() {
+		let mergerElements = document.getElementsByClassName("merger");
+		if (mergerElements.length > 0) {
+			let length = mergerElements.length;
+			let index = Math.floor(length / 2);
+			if (index >= 0 && index < length) {
+				mergerElements[index].remove();
+			}
+		}
+	}
+	function addFront() {
+		let component = document.createElement("div");
+		let value = document.getElementById("inputElement").value;
+		component.style.color = "black";
+		component.innerHTML = value;
+		component.className = "merger";
+		let container = document.getElementById("target");
+		container.insertBefore(component, container.firstChild);
+	}
+	function swap() {
+		let mergerElements = document.getElementsByClassName("merger");
+		let container = document.getElementById("target");
+		let section1 = Math.floor(Math.random() * mergerElements.length);
+		let section2 = Math.floor(Math.random() * mergerElements.length);
+		let innerText1 = document.getElementsByClassName("merger")[section1];
+		let innerText2 = document.getElementsByClassName("merger")[section2];
+		if (mergerElements.length > 1) {
+			let temp = innerText1.innerHTML;
+			innerText1.innerHTML = innerText2.innerHTML;
+			innerText2.innerHTML = temp;
+		}
+	}
+</script>
+</script>
+</html>

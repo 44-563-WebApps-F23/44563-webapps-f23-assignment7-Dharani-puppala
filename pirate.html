@@ -1,81 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dharani treasure </title>
     <style>
-        #locations{
+        #locations {
             color: brown;
         }
-        #penalty{
-            color:blueviolet
+
+        #penalty {
+            color: blueviolet
         }
-        
     </style>
 </head>
+
 <body>
     <h1 style="color:darkgreen">Find the treasure by Dharani</h1>
     <p>
         Click on the locations to search
-for treasure, beware the traps
+        for treasure, beware the traps
     </p>
+    <button type="button" onclick="resetGame()">New Game</button>
     <div class="container1">
-    <div id="locations">
-        Number of locations checked is zero.
-      </div>
-    <div class="container2">
-    <div id="penalty">
-        Penalty is zero.
-      </div>
-    <p class="click">Click for help.</p>
-    <div id="help">
-        Help report.
+        <div id="locations">
+            Number of locations checked is zero.
+        </div>
+        <div class="container2">
+            <div id="penalty">
+                Penalty is zero.
+            </div>
+            <p class="click" onclick="help()">Click for help.</p>
+            <div id="help">
+                Help report.
+            </div>
+        </div>
+        <div class="trescontainer">
+            <img id="pic0" onclick="check(0)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic1" onclick="check(1)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic2" onclick="check(2)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic3" onclick="check(3)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic4" onclick="check(4)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+        </div>
+        <div class="trescontainer">
+            <img id="pic5" onclick="check(5)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic6" onclick="check(6)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic7" onclick="check(7)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic8" onclick="check(8)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic9" onclick="check(9)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+        </div>
+        <div class="trescontainer">
+            <img id="pic10" onclick="check(10)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic11" onclick="check(11)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic12" onclick="check(12)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic13" onclick="check(13)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic14" onclick="check(14)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+        </div>
+        <div class="trescontainer">
+            <img id="pic15" onclick="check(15)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic16" onclick="check(16)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic17" onclick="check(17)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic18" onclick="check(18)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic19" onclick="check(19)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+        </div>
+        <div class="trescontainer">
+            <img id="pic20" onclick="check(20)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic21" onclick="check(21)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic22" onclick="check(22)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic23" onclick="check(23)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+            <img id="pic24" onclick="check(24)" class="img" src="treasure.jpg" alt="treasurelocation" height="100"
+                width="200">
+        </div>
+
     </div>
-    </div>
-    <div class="trescontainer">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-    </div>
-    <div class="trescontainer">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-    </div>
-    <div class="trescontainer">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-    </div>
-    <div class="trescontainer">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-    </div>
-    <div class="trescontainer">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-        <img class="img" src="treasure.jpg" alt="treasurelocation" height="100" width="'200">
-    </div>
-    
-      </div>
+    <script>
+        var ids = [
+            "pic0",
+            "pic1",
+            "pic2",
+            "pic3",
+            "pic4",
+            "pic5",
+            "pic6",
+            "pic7",
+            "pic8",
+            "pic9",
+            "pic10",
+            "pic11",
+            "pic12",
+            "pic13",
+            "pic14",
+            "pic15",
+            "pic16",
+            "pic17",
+            "pic18",
+            "pic19",
+            "pic20",
+            "pic21",
+            "pic22",
+            "pic23",
+            "pic24"]
+        
+            let checkCount = 0;
+            let penalty = 0;
+            let lastCheck = 0;
+            let treasureLocation = 5;
+            let trapLocation = 18;
+            let gameOver = false;
+
+            function check(position) {
+                if (gameOver) {
+                    return;
+                }
+
+                var picId = ids[position];
+                var imgElement = document.getElementById(picId);
+                if (position === treasureLocation) {
+                    imgElement.src = 'treasurepic.jpg';
+                } else if (position === trapLocation) {
+                    imgElement.src = 'trap.jpg';
+                } else {
+                    imgElement.src = 'pirates.jpg';
+                }
+                if ((position != treasureLocation) && (position != trapLocation)) {
+                    penalty++;
+                }
+                checkCount++;
+
+                const locationsElement = document.getElementById('locations');
+                locationsElement.textContent = `Locations: ${checkCount}`;
+
+                if (position === treasureLocation) {
+                    gameOver = true;
+                    penalty = penalty - 3;
+                }
+                if (position === trapLocation) {
+                    gameOver = true;
+                    penalty = penalty + 4;
+                }
+
+                const penaltyElement = document.getElementById('penalty');
+                penaltyElement.textContent = `Penalty: ${penalty}`;
 
 
+                lastCheck = position;
+            }
+
+            function help() {
+                let rowll = lastCheck / 5;
+                let colLL = lastCheck % 5;
+                if (lastCheck == 0 || lastCheck == 6 || lastCheck == 10) {
+                    document.getElementById("help").innerHTML = "Can Smell It";
+                }
+                else if (lastCheck == 1 || lastCheck == 7 || lastCheck == 11 || lastCheck == 15) {
+                    document.getElementById("help").innerHTML = "Close Matie";
+                }
+                else {
+                    document.getElementById("help").innerHTML = "Step Faster";
+                }
+                penalty = penalty + 2;
+                document.getElementById("penalty").innerHTML = "Penalty is " + penalty;
+            }
+
+            function resetGame() {
+                let treasureLocation = Math.floor(Math.random() * 24);
+                //console.log(treasureLocation)
+                let trapLocation = Math.floor(Math.random() * 24);
+                document.getElementById("locations").textContent = "Number of locations checked is 0";
+                document.getElementById("penalty").textContent = "penalty is 0";
+                for (let i = 0; i <= 25; i++) {
+                    if (i == treasureLocation) {
+                        document.getElementById('pic'+ i).src = "treasurepic.jpg";
+                    } else if (i == trapLocation) {
+                        document.getElementById('pic'+ i).src = "trap.jpg";
+                    }else{
+                        document.getElementById('pic'+ i).src = "pirates.jpg";
+                    }
+                }
+
+            }
+        </script>
 
 </body>
 
-</html>
-    
-</body>
 </html>
